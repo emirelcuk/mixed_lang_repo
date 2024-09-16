@@ -9,10 +9,6 @@ class Task:
         self.priority = priority
         self.completed = False
 
-    def complete(self):
-        self.completed = True
-
-
     def __str__(self):
         status = "Completed" if self.completed else "Not Completed"
         return (f"{self.title} | {status} | Priority: {self.priority} | "
