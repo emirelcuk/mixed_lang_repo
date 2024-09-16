@@ -9,16 +9,12 @@ class Book {
         $this->title = $title;
         $this->author = $author;
         $this->isbn = $isbn;
+        $this->books[] = $book;
     }
 
     public function getTitle() {
-        return $this->title;
+      
     }
-
-    public function getAuthor() {
-        return $this->author;
-    }
-
     public function getIsbn() {
         return $this->isbn;
     }
@@ -32,6 +28,7 @@ class Library {
     private $books = [];
 
     public function addBook(Book $book) {
+        $this->books[] = $book;
         $this->books[] = $book;
     }
 
