@@ -5,23 +5,8 @@ class Book {
     private $author;
     private $isbn;
 
-    public function __construct($title, $author, $isbn) {
-        $this->title = $title;
-        $this->author = $author;
-        $this->isbn = $isbn;
-        $this->books[] = $book;
-    }
-
-    public function getTitle() {
-      
-    }
-    public function getIsbn() {
-        return $this->isbn;
-    }
-
-    public function __toString() {
-        return "Title: $this->title, Author: $this->author, ISBN: $this->isbn";
-    }
+   
+    
 }
 
 class Library {
