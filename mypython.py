@@ -1,18 +1,6 @@
 import datetime
 
 # Task class
-class Task:
-    def __init__(self, title, description, due_date, priority='Medium'):
-        self.title = title
-        self.description = description
-        self.due_date = due_date
-        self.priority = priority
-        self.completed = False
-
-    def __str__(self):
-        status = "Completed" if self.completed else "Not Completed"
-        return (f"{self.title} | {status} | Priority: {self.priority} | "
-                f"Due Date: {self.due_date} \nDescription: {self.description}")
 
 # Task manager class
 class TaskManager:
