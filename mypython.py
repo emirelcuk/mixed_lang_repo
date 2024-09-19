@@ -7,11 +7,6 @@ class TaskManager:
     def __init__(self):
         self.tasks = []
 
-    def add_task(self, title, description, due_date, priority='Medium'):
-        task = Task(title, description, due_date, priority)
-        self.tasks.append(task)
-        self.sort_tasks()
-        print(f"Task '{title}' has been added.")
 
     def list_tasks(self):
         if not self.tasks:
