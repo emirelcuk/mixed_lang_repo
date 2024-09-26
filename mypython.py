@@ -66,19 +66,21 @@ def delete_task(self, index):
 
 def get_valid_date(prompt):
     while True:
+        date_str = input(prompt)
         try:
-            date_str = input(prompt)
-            return datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
+            valid_date = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
+            return valid_date
         except ValueError:
             print("Invalid date format. Please use YYYY-MM-DD.")
 
 def get_valid_priority():
     priorities = ['Low', 'Medium', 'High']
-    priority = input("Priority (Low, Medium, High): ").capitalize()
-    if priority not in priorities:
-        print("Invalid priority. Defaulting to 'Medium'.")
-        return 'Medium'
-    return priority
+    while True:
+        priority = input("Priority (Low, Medium, High): ").capitalize()
+        if priority in priorities:
+            return priority
+        else:
+            print("Invalid priority. Please choose from 'Low', 'Medium', or 'High'.")
 
 # User interface
 def main():
