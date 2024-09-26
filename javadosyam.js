@@ -26,10 +26,11 @@ function showMenu() {
                 deleteNote();
                 break;
             case '4':
+                console.log('Exiting the application. Goodbye!');
                 rl.close();
                 break;
             default:
-                console.log('Invalid choice.');
+                console.log('Invalid choice. Please select a valid option.');
                 showMenu();
                 break;
         }
@@ -38,6 +39,10 @@ function showMenu() {
 
 function addNote() {
     rl.question('Enter note content: ', (content) => {
+        if (!content.trim()) {
+            console.log('Note content cannot be empty. Please try again.');
+            return addNote(); // Retry adding note
+        }
         fs.appendFile(filePath, content + '\n', (err) => {
             if (err) throw err;
             console.log('Note added.');
@@ -50,7 +55,7 @@ function listNotes() {
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) throw err;
         console.log('\nNotes:');
-        console.log(data || 'No notes available.');
+        console.log(data.trim() || 'No notes available.');
         showMenu();
     });
 }
@@ -78,7 +83,7 @@ function deleteNote() {
                     showMenu();
                 });
             } else {
-                console.log('Invalid number.');
+                console.log('Invalid number. Please select a valid note number.');
                 showMenu();
             }
         });
