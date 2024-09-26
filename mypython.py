@@ -23,20 +23,33 @@ class TaskManager:
         else:
             print("Invalid task number.")
 
-    def update_task(self, index, title=None, description=None, due_date=None, priority=None):
-        if self._is_valid_index(index):
-            self.tasks[index].update(title, description, due_date, priority)
-            self.sort_tasks()
-            print(f"Task '{self.tasks[index].title}' has been updated.")
-        else:
-            print("Invalid task number.")
+def update_task(self, index, title=None, description=None, due_date=None, priority=None):
+    if not self._is_valid_index(index):
+        print("Invalid task number.")
+        return
 
-    def delete_task(self, index):
-        if self._is_valid_index(index):
-            task = self.tasks.pop(index)
-            print(f"Task '{task.title}' has been deleted.")
-        else:
-            print("Invalid task number.")
+    task = self.tasks[index]
+
+    if title is not None:
+        task.title = title
+    if description is not None:
+        task.description = description
+    if due_date is not None:
+        task.due_date = due_date
+    if priority is not None:
+        task.priority = priority
+
+    self.sort_tasks()
+    print(f"Task '{task.title}' has been updated.")
+
+def delete_task(self, index):
+    if not self._is_valid_index(index):
+        print("Invalid task number.")
+        return
+
+    task = self.tasks.pop(index)
+    print(f"Task '{task.title}' has been deleted.")
+
 
     def sort_tasks(self):
         # Sort tasks by completion status, priority, and due date
