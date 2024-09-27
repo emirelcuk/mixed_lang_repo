@@ -20,34 +20,40 @@ class Book
     }
 }
 
-class Library
+public class Library
 {
-    private List<Book> books;
+    private readonly List<Book> _books;
 
     public Library()
     {
-        books = new List<Book>();
+        _books = new List<Book>();
     }
 
     public void AddBook(Book book)
     {
-        books.Add(book);
+        if (book != null && !_books.Exists(b => b.ISBN == book.ISBN))
+        {
+            _books.Add(book);
+        }
     }
 
-    public void RemoveBook(string isbn)
+    public bool RemoveBook(string isbn)
     {
-        books.RemoveAll(book => book.ISBN == isbn);
+        return _books.RemoveAll(book => book.ISBN == isbn) > 0;
     }
 
     public Book FindBookByTitle(string title)
     {
-        return books.Find(book => book.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+        return _books.FirstOrDefault(book => 
+            string.Equals(book.Title, title, StringComparison.OrdinalIgnoreCase));
     }
 
     public Book FindBookByIsbn(string isbn)
     {
-        return books.Find(book => book.ISBN == isbn);
+        return _books.FirstOrDefault(book => book.ISBN == isbn);
     }
+}
+
 
     public void ListBooks()
     {
