@@ -9,12 +9,7 @@ class Task:
         self.priority = priority
         self.completed = False
 
-    def complete(self):
-        self.completed = True
 
-    def __str__(self):
-        status = 'Completed' if self.completed else 'Incomplete'
-        return f"{self.title} | {self.description} | Due: {self.due_date} | Priority: {self.priority} | Status: {status}"
 
 # Task manager class
 class TaskManager:
