@@ -67,14 +67,7 @@ function main() {
         echo "5. Exit\n";
         $choice = readline("Choose an option: ");
 
-        switch ($choice) {
-            case '1':
-                $title = readline("Book Title: ");
-                $author = readline("Book Author: ");
-                $isbn = readline("Book ISBN: ");
-                $library->addBook(new Book($title, $author, $isbn));
-                echo "Book added.\n";
-                break;
+        
 
             case '2':
                 $isbnToRemove = readline("Enter ISBN of the book to remove: ");

@@ -30,16 +30,7 @@ public class Library
         }
     }
 
-    public bool RemoveBook(string isbn)
-    {
-        return _books.RemoveAll(book => book.ISBN == isbn) > 0;
-    }
-
-    public Book FindBookByTitle(string title)
-    {
-        return _books.FirstOrDefault(book => 
-            string.Equals(book.Title, title, StringComparison.OrdinalIgnoreCase));
-    }
+    
 
     public Book FindBookByIsbn(string isbn)
     {
