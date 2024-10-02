@@ -18,12 +18,7 @@ class Task:
 
 # Task manager class
 class TaskManager:
-    def __init__(self):
-        self.tasks = []
-
-    def list_tasks(self):
-        if not self.tasks:
-            print("No tasks available.")
+    
         else:
             for index, task in enumerate(self.tasks, start=1):
                 print(f"{index}. {task}")
