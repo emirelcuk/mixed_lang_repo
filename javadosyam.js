@@ -19,12 +19,7 @@ function showMenu() {
             case '1':
                 addNote();
                 break;
-            case '2':
-                listNotes();
-                break;
-            case '3':
-                deleteNote();
-                break;
+        
             case '4':
                 console.log('Exiting the application. Goodbye!');
                 rl.close();
