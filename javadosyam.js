@@ -50,14 +50,6 @@ function addNote() {
         });
     });
 }
-
-function listNotes() {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) throw err;
-        console.log('\nNotes:');
-        console.log(data.trim() || 'No notes available.');
-        showMenu();
-    });
 }
 
 function deleteNote() {
