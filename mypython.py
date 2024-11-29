@@ -11,25 +11,7 @@ class Task:
 
 
 
-# Task manager class
-class TaskManager:
-    
-        else:
-            for index, task in enumerate(self.tasks, start=1):
-                print(f"{index}. {task}")
 
-    def complete_task(self, index):
-        if self._is_valid_index(index):
-            task = self.tasks[index]
-            task.complete()
-            print(f"Task '{task.title}' has been completed.")
-        else:
-            print("Invalid task number.")
-
-    def update_task(self, index, title=None, description=None, due_date=None, priority=None):
-        if not self._is_valid_index(index):
-            print("Invalid task number.")
-            return
 
         task = self.tasks[index]
 
