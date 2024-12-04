@@ -1,13 +1,7 @@
 import datetime
 
 # Task class (Assuming a simple Task class implementation)
-class Task:
-    def __init__(self, title, description, due_date, priority):
-        self.title = title
-        self.description = description
-        self.due_date = due_date
-        self.priority = priority
-        self.completed = False
+
 
 
 
