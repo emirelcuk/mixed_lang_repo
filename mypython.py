@@ -22,15 +22,6 @@ import datetime
         print(f"Task '{task.title}' has been updated.")
 
 
-    def sort_tasks(self):
-        priority_order = {'High': 0, 'Medium': 1, 'Low': 2}
-        self.tasks.sort(
-            key=lambda task: (task.completed, priority_order.get(task.priority, 1), task.due_date)
-        )
-
-    def _is_valid_index(self, index):
-        return 0 <= index < len(self.tasks)
-
 # Input validation functions
 def get_valid_date(prompt):
     while True:
