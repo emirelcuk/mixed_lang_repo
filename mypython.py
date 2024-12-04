@@ -27,13 +27,6 @@ class Task:
         self.sort_tasks()
         print(f"Task '{task.title}' has been updated.")
 
-    def delete_task(self, index):
-        if not self._is_valid_index(index):
-            print("Invalid task number.")
-            return
-
-        task = self.tasks.pop(index)
-        print(f"Task '{task.title}' has been deleted.")
 
     def sort_tasks(self):
         priority_order = {'High': 0, 'Medium': 1, 'Low': 2}
