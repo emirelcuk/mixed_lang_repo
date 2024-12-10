@@ -19,7 +19,12 @@ function showMenu() {
             case '1':
                 addNote();
                 break;
-        
+            case '2':
+                listNotes();
+                break;
+            case '3':
+                deleteNote();
+                break;
             case '4':
                 console.log('Exiting the application. Goodbye!');
                 rl.close();
@@ -45,6 +50,19 @@ function addNote() {
         });
     });
 }
+
+function listNotes() {
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) throw err;
+        const notes = data.trim().split('\n');
+        if (notes.length === 0) {
+            console.log('No notes available.');
+        } else {
+            console.log('\nNotes:');
+            notes.forEach((note, index) => console.log(`${index + 1}. ${note}`));
+        }
+        showMenu();
+    });
 }
 
 function deleteNote() {
